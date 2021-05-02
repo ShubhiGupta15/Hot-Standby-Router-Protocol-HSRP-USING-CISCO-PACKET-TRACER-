@@ -1,0 +1,55 @@
+•Configuration code for Router 0-
+enable                                      
+config t
+interface fastethernet 0/0                
+ip add 192.168.0.1 255.255.255.0
+no shutdown
+exit
+interface fastethernet 0/1
+ip add 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+•Configuration code for Router 1-
+enable
+config t
+interface fastethernet 0/0
+ip add 192.168.0.2 255.255.255.0
+no shutdown
+exit
+interface fastethernet 0/1
+ip add 192.168.1.2 255.255.255.0
+no shutdown
+exit
+
+•	Now we are assigning different priority values to different router and the router with high priority will be the active router while other will be in standby mode.
+Code for Router 0-
+config t
+interface fastethernet 0/0
+standby 1 ip 192.168.0.254
+standby 1 priority 11
+exit
+interface fastethernet 0/1
+standby 2 ip 192.168.1.254
+standby 2 priority 10
+exit
+
+Code for Router 1-
+config t
+interface fastethernet 0/0
+standby 1 ip 192.168.0.254
+standby 1 priority 10
+exit
+interface fastethernet 0/1
+standby 2 ip 192.168.1.254
+standby 2 priority 10
+exit
+
+• For shutting down the Router 0 we use these lines of code-
+enable
+config t
+inter f0/0
+shutdown
+exit
+show standby
+
