@@ -8,7 +8,7 @@ WHAT IS HSRP?
 SOME IMPORTANT TERMS RELATED TO HSRP-
 Virtual IP : IP address from local subnet is assigned as default gateway to all local hosts in the network.
 Virtual MAC address : MAC address is generated automatically by HSRP. The first 24 bits will be default CISCO address (i.e. 0000.0c). The next 16 bits are HSRP ID (i.e. 07.ac). The next 8 bits will be the group number in hexadecimal. e.g- if the group number is 10 then the last 8 bits will be 0a. Example of virtual MAC address –
-       0000.0c07.ac0a
+     0000.0c07.ac0a
 Hello messages : Periodic messages exchanged by active and standby routers. These messages are exchanged after every 3 seconds telling the state of router.
 Hold down timer : Its default value is 10 seconds i.e roughly 3 times the value of hello message. This timer tells us about the router that how much time will the standby router waits for hello message if it is not received on time. Note- If the active router fails then the standby router will become the active router.
 Priority : By default, the priority value is 100. It is helpful when the active router comes back after falling down, we can change the priority of standby router (which has become the active router after the original active router is down) to less than 100 therefore it again becomes standby router.
