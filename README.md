@@ -2,10 +2,12 @@
 ![image](https://user-images.githubusercontent.com/79734129/116816911-98f11780-ab81-11eb-854a-f069c790cbd2.png)
 
 WHAT IS HSRP?
+
 1.Hot Standby Router Protocol (HSRP) is a CISCO proprietary protocol, which provides redundancy for a local subnet. In HSRP, two or more routers gives an illusion of a virtual router.
 2.HSRP allows you to configure two or more routers as standby routers and only a single router as active router at a time. All the routers in a single HSRP group shares a single MAC address and IP address, which acts a default gateway to the local network. The Active router is responsible for forwarding the traffic. If it fails, the Standby router takes up all the responsibilities of the active router and forwards the traffic.
 
 SOME IMPORTANT TERMS RELATED TO HSRP-
+
 Virtual IP : IP address from local subnet is assigned as default gateway to all local hosts in the network.
 Virtual MAC address : MAC address is generated automatically by HSRP. The first 24 bits will be default CISCO address (i.e. 0000.0c). The next 16 bits are HSRP ID (i.e. 07.ac). The next 8 bits will be the group number in hexadecimal. e.g- if the group number is 10 then the last 8 bits will be 0a. Example of virtual MAC address –
      0000.0c07.ac0a
@@ -15,6 +17,7 @@ Priority : By default, the priority value is 100. It is helpful when the active
 Preempt : It is a state in which the standby router automatically becomes the active router.
 
 WHAT ARE DIFFERENT HSRP STATES?
+
 When in operation, HSRP devices are configured into one of many states:
 Active – This is the state of the device that is actively forwarding traffic.
 Init or Disabled – This is the state of a device that is not yet ready or able to participate in HSRP.
@@ -25,6 +28,7 @@ Standby – This is the state of a device that is prepared to take over the tra
 
 WHAT ARE ADVANTAGES AND DISADVANTAGES OF HSRP?
 ADVANTAGES-
+
 Used for backup process
 No need to change default gateway every time
  No fault tolerance
